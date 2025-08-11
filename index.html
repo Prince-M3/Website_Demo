@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./assets/images/lg.png" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="./assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="./assets/css/odometer.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <title>YESEM CHITS PRIVATE LTD</title>
+    <style>
+        /* ===== COLOR THEME ===== */
+        :root {
+            --primary: #FFBD59;  /* New Orange */
+            --secondary: #FFE680;  /* New Yellow */
+            --dark: #01195C;  /* Dark Blue */
+            --light: #f8f9fa;
+            --text-light: #01195C;
+            --nav-text: #01195C; /* Dark blue for desktop nav text */
+        }
+
+        /* ===== NAVBAR ===== */
+        .header {
+            background: transparent !important;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        /* Desktop Navbar Text Color */
+        .menu, 
+        .menu-hover,
+        .header a:not(.mobileMenuOpenButton),
+        .header i,
+        .header .text-s1 {
+            color: var(--nav-text) !important;
+        }
+
+        .menu:hover {
+            background: var(--secondary) !important;
+            color: var(--dark) !important;
+        }
+
+        /* Mobile menu styling */
+        .mobileMenu {
+            background: var(--dark) !important;
+            width: 80% !important;
+        }
+        
+        .mobileMenuBg {
+            background: rgba(0,0,0,0.7) !important;
+        }
+
+        /* ===== CONTENT SPACING ===== */
+        body {
+            padding-top: 80px; /* Prevent content overlap */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }  
+
+        .header.scrolled {
+            background: var(--dark) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            background: linear-gradient(90deg, #FFE680, #FFBD59) !important;
+            padding-top: 100px; /* Space for navbar */
+        }
+        
+        
+        /* ===== BUTTONS ===== */
+        .bg-s2 {
+            background: var(--secondary) !important;
+            color: var(--dark) !important;
+            border-color: var(--dark) !important;
+        }
+        .bg-p1 {
+            background: linear-gradient(90deg, var(--secondary), var(--primary)) !important;
+        }
+        
+        /* ===== TEXT COLORS ===== */
+        .text-s1 { color: var(--dark) !important; }
+        .text-s3 { 
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* ===== NAVBAR ALIGNMENT FIXES ===== */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 1rem 2rem;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .contact-container {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+                /* Footer styling */
+    footer {
+        background: linear-gradient(to right, #01195C, #0d1b33) !important;
+        color: white !important;
+    }
+        
+        /* ===== MOBILE MENU IMPROVEMENTS ===== */
+        @media (max-width: 1023px) {
+            .header-container {
+                padding: 0.5rem 1rem;
+            }
+            
+            .desktop-nav, .contact-container {
+                display: none;
+            }
+            
+            .mobileMenuOpenButton {
+                display: block;
+            }
+            
+            .header img {
+                height: 3rem !important;
+                width: auto !important;
+            }
+            
+            body {
+                padding-top: 70px;
+            }
+            
+            /* Mobile menu text visibility */
+            .mobileMenu a,
+            .mobileMenu i {
+                color: var(--text-light) !important;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .mobileMenuOpenButton {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        // Make navbar solid on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        window.onload = function () {
+            const myModal = new bootstrap.Modal(document.getElementById('posterModal'));
+            myModal.show();
+        }
+    </script>
+        <script>
+        // Make navbar solid on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        window.onload = function () {
+            const myModal = new bootstrap.Modal(document.getElementById('posterModal'));
+            myModal.show();
+        }
+        
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuOpenBtn = document.querySelector('.mobileMenuOpenButton');
+            const menuCloseBtn = document.querySelector('.mobileMenuCloseButton');
+            const mobileMenu = document.querySelector('.mobileMenu');
+            const mobileMenuBg = document.querySelector('.mobileMenuBg');
+            
+            if (menuOpenBtn) {
+                menuOpenBtn.addEventListener('click', function() {
+                    mobileMenu.classList.remove('mobileMenuClose');
+                    mobileMenuBg.classList.remove('mobileMenuBgClose');
+                });
+            }
+            
+            if (menuCloseBtn) {
+                menuCloseBtn.addEventListener('click', function() {
+                    mobileMenu.classList.add('mobileMenuClose');
+                    mobileMenuBg.classList.add('mobileMenuBgClose');
+                });
+            }
+            
+            if (mobileMenuBg) {
+                mobileMenuBg.addEventListener('click', function() {
+                    mobileMenu.classList.add('mobileMenuClose');
+                    mobileMenuBg.classList.add('mobileMenuBgClose');
+                });
+            }
+        });
+    </script>
+</head>
+    <main>
+        <!-- Header/Navbar (now transparent) -->
+        <header class="">
+            <div class="top-0 left-0 right-0 z-50 header headerAbsolute">
+                <!-- ... -->
+            </div>
+        </header>
+
+        <!-- Hero Section - Added padding-top via CSS -->
+        <section class="hero-section stp-30 overflow-hidden">
+            <!-- ... (rest of your hero content) ... -->
+        </section>
+
+        <!-- ... (rest of your HTML remains unchanged) ... -->
+    </main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  window.onload = function () {
+    const myModal = new bootstrap.Modal(document.getElementById('posterModal'));
+    myModal.show();
+  }
+</script>
+
+
+
+    <title>YESEM CHITS PRIVATE LTD</title>
+  <script defer src="index.js"></script><link href="style.css" rel="stylesheet"></head>
+  <body>
+    <main>
+<!-- Trigger button (you can remove this if auto show) -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="posterModal" tabindex="-1" aria-labelledby="posterModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body d-flex justify-content-center position-relative">
+        <!-- Close Button -->
+<button type="button" class="position-absolute top-0 end-0 p-3 bg-transparent border-0" data-bs-dismiss="modal" aria-label="Close">
+  <span style="font-size: 1.5rem; color: #01195C;">&times;</span>
+</button>
+        <!-- Poster Image -->
+        <img src="./assets/images/popup-poster.png" alt="Poster" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      <!-- Header Section Start -->
+<header class="">
+  <div class="top-0 left-0 right-0 z-50 header headerAbsolute">
+    <div class="header-container">
+      <div class="logo-container">
+        <button class="mobileMenuOpenButton text-3xl">
+          <i class="ph ph-list"></i>
+        </button>
+        <!-- Logo -->
+        <a href="./index.html">
+          <img style="height: 5rem;width: 20rem;" src="./assets/images/logo.png" alt="logo" />
+        </a>
+      </div>
+      <!-- Desktop Menu Start -->
+      <nav class="desktop-nav">
+        <ul class="flex items-center gap-3">
+          <li>
+            <a href="./index.html" class="menu hover:header_menu_shadow duration-700 px-2 py-3 rounded-lg">Home</a>
+          </li>     
+          <li>
+            <a href="./schemes.html" class="hover:header_menu_shadow duration-700 px-2 py-3 rounded-lg menu">Schemes</a>
+          </li>
+          <li>
+            <a href="./gallery.html" class="hover:header_menu_shadow duration-700 px-2 py-3 rounded-lg menu">Gallery</a>
+          </li>
+          <li>
+            <a href="./about.html" class="hover:header_menu_shadow duration-700 px-2 py-3 rounded-lg menu">About Us</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Desktop Menu End -->
+
+      <div
+        class="flex justify-end items-center gap-2 sm:gap-6 xl:gap-10 font-medium max-sm:hidden"
+      >
+<div class="flex items-start gap-3">
+  <!-- Phone icon with your brand colors -->
+  <div class="flex items-center justify-center rounded-full p-2 md:p-3" 
+       style="background: #FF914D; color: #01195C;">
+    <i class="ph ph-phone-call text-lg lg:text-2xl !leading-none"></i>
+  </div>
+  <div class="flex flex-col leading-tight text-sm sm:text-base">
+    <a href="tel:+919840278805" class="text-[#01195C] hover:text-[#FF914D]">+91 9840278805</a>
+    <a href="tel:+919150500254" class="text-[#01195C] hover:text-[#FF914D]">+91 9150500254</a>
+  </div>
+</div>
+
+        <a
+          href="./contact.html"
+          class="flex justify-center max-sm:text-sm items-center gap-3 py-2 md:py-3 px-3 md:px-6 rounded-full bg-s2 border border-mainTextColor text-mainTextColor group font-medium"
+        >
+          Contact Us
+          <i
+            class="ph-bold ph-arrow-up-right group-hover:rotate-[45deg] duration-500 text-base sm:text-xl lg:text-2xl !leading-[0]"
+          ></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Start -->
+  <nav class="">
+    <div class="fixed top-0 left-0 bg-s1/80 h-full w-full lg:hidden duration-700 z-[998] mobileMenuBg mobileMenuBgClose"></div>
+
+    <div class="flex justify-start flex-col items-start gap-8 pb-10 lg:gap-20 fixed lg:hidden top-0 left-0 w-3/4 min-[500px]:w-1/2 h-full bg-s2 overflow-y-auto duration-700 z-[999] mobileMenu mobileMenuClose">
+      <div class="flex justify-between items-center w-full p-4 sm:p-8">
+        <a href="./index.html" class="flex items-center py-2 pr-4">
+          <img src="./assets/images/lg.png" alt="YESEM Logo" class="h-20 lg:h-24 w-auto max-h-24" />
+        </a>
+
+        <i class="ri-close-line !text-3xl cursor-pointer mobileMenuCloseButton">
+          <i class="ph ph-x"></i>
+        </i>
+      </div>
+
+      <ul class="text-lg sm:text-xl flex gap-6 lg:gap-10 items-start flex-col pl-8">
+        <li>
+          <a href="./index.html" class="menu-hover hover:after:border-p1">Home</a>
+        </li>
+        <li>
+          <a href="./schemes.html" class="menu-hover hover:after:border-p1">Schemes</a>
+        </li>
+        <li>
+          <a href="./contact.html" class="menu-hover hover:after:border-p1">Contact</a>
+        </li>
+        <li>
+          <a href="./gallery.html" class="menu-hover hover:after:border-p1">Gallery</a>
+        </li>
+        <li>
+          <a href="./about.html" class="menu-hover hover:after:border-p1">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Mobile Menu End -->
+</header>
+
+    <!-- Header Section End -->
+
+<!-- Hero Section Start -->
+<section class="hero-section stp-30 overflow-hidden">
+  <img src="./assets/images/hero_bg_element1.png" alt="image" class="absolute top-0 left-0 xxxl:left-36 max-lg:w-[300px] max-xxl:w-[500px] max-md:hidden" />
+  <img src="./assets/images/hero_bg_element2.png" alt="image" class="absolute top-0 right-0 max-xxl:w-[300px] max-sm:hidden" />
+  <div class="absolute -left-[200px] -bottom-1/2 bg-white blur-[200px] rounded-[1176px] max-w-full lg:w-[1176px] h-[1176px] overflow-hidden"></div>
+  <div class="xxl:ml-[calc((100%-1296px)/2)] lg:max-xxl:py-10 max-xxl:container relative z-20 max-lg:pt-15 text-s1 grid grid-cols-12">
+    <img src="./assets/images/hero_bg_element3.png" alt="image" class="absolute top-1/3 left-1/3 max-sm:hidden" />
+    <div class="col-span-12 lg:col-span-5 flex flex-col justify-center gap-2">
+      <p class="uppercase text-base lg:text-xl font-semibold animate__animated animate__fadeInUp" style="color: #FF914D;">
+        A New Way to Borrow, Save and Grow
+      </p>
+      <div class="display-2">
+        We Make
+        <div class="text-s3 inline-flex" style="color: #FF914D;">Savings</div>
+        <br />
+        Simple.
+      </div>
+      <p class="max-w-[550px]">
+        One Time Action For Joining Hands And Stagnant Afterwards.
+      </p>
+      <div class="flex justify-start items-center gap-4 pt-6 lg:pt-8 pb-15">
+        <a 
+          href="./contact.html" 
+          class="py-3 px-5 rounded-full text-white font-medium"
+          style="background: #FF914D;"
+        >
+          Get Started
+        </a>
+      </div>
+    </div>
+<div class="col-span-12 lg:col-span-6 lg:col-start-7 flex flex-col items-center">
+  <img id="animatedGif" src="./assets/images/lgl1.gif" alt="image" />
+  <!-- Enhanced text below GIF -->
+  <p class="text-xl md:text-2xl mt-3 font-bold text-center tracking-wide" style="color: #01195C; font-family: 'Poppins', sans-serif; text-shadow: 0px 1px 2px rgba(0,0,0,0.1);">
+    A UNIT OF <span class="italic" style="color: #01195C;">YESEM</span> GROUP
+  </p>
+</div>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const gif = document.getElementById('animatedGif');
+        // After 1 second (approximate time for GIF to play once), replace with static image
+        setTimeout(function() {
+          gif.src = "./assets/images/lgl.png";
+        }, 1000); // Adjust time based on your GIF's duration
+      });
+    </script>
+  </div>
+</section>
+<!-- Hero Section End -->
+
+
+    <!-- Solutions Section Start -->
+    <section class="stp-30 sbp-30 relative">
+      <img
+        src="./assets/images/circleIcon.png"
+        alt="circle icon"
+        class="absolute top-10 left-0 max-xxl:hidden xxl:-left-72 xxxl:-left-40"
+      />
+      <img
+        src="./assets/images/sliceIcon.png"
+        alt="slice icon"
+        class="absolute right-0 sm:right-2 lg:right-10 top-10 xl:top-32 max-md:h-[80px]"
+      />
+      <div class="container z-10 relative">
+        <div class="flex justify-center items-center">
+          <div class="flex justify-center items-center max-xxl:overflow-hidden">
+            <div
+              class="max-w-[700px] text-center flex justify-center items-center flex-col"
+            >
+              <h1
+                class="display-4 pt-4 pb-4 lg:pb-6 wow animate__animated animate__fadeInDown" style="color: #01195C;"
+              >
+                Tamil Nadu’s Trusted Chit Partner
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-12 stp-15 max-lg:gap-6">
+          <div class="col-span-12 lg:col-span-6">
+<div class="flex justify-center items-center overflow-hidden self-stretch">
+  <img
+    src="./assets/images/lgl.png"
+    alt="image"
+    class="hover:scale-110 duration-500 w-[280px] h-auto"
+  />
+</div>
+
+
+          </div>
+          <div
+            class="col-span-12 lg:col-start-8 lg:col-span-5 flex justify-center items-start flex-col"
+          >
+            <h1 class="heading-1 pb-5" style="color: #FF914D;">Streamlined Chit Fund Management</h1>
+            <p class="text-bodyText" style="color: #01195C;">
+              We offer fast and flexible chit schemes that simplify your savings and borrowing process—designed for your financial growth.
+            </p>
+            <div class="grid grid-cols-2 gap-4 lg:gap-6 py-6 lg:py-10 w-full">
+              <div
+                class="group col-span-2 sm:col-span-1 flex justify-start items-center gap-5"
+              >
+                <i
+                  class="ph-fill ph-file-text rounded-full border border-strokeColor bg-softBg w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] text-4xl text-s1 group-hover:text-mainTextColor group-hover:bg-s2 group-hover:border-mainTextColor duration-500 !leading-[0] flex justify-center items-center"
+                ></i>
+                <p class="text-lg font-medium group-hover:text-s1 duration-500" style="color: #01195C;">
+                  Chit Fund Solutions
+                </p>
+              </div>
+              <div
+                class="group col-span-2 sm:col-span-1 flex justify-start items-center gap-5"
+              >
+                <i
+                  class="ph-fill ph-hand-heart rounded-full border border-strokeColor bg-softBg w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] text-4xl text-s1 group-hover:text-mainTextColor group-hover:bg-s2 group-hover:border-mainTextColor duration-500 !leading-[0] flex justify-center items-center"
+                ></i>
+                <p class="text-lg font-medium group-hover:text-s1 duration-500" style="color: #01195C;">
+                  Loan Distribution
+                </p>
+              </div>
+              <div
+                class="group col-span-2 sm:col-span-1 flex justify-start items-center gap-5"
+              >
+                <i
+                  class="ph-fill ph-lightbulb-filament rounded-full border border-strokeColor bg-softBg w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] text-4xl text-s1 group-hover:text-mainTextColor group-hover:bg-s2 group-hover:border-mainTextColor duration-500 !leading-[0] flex justify-center items-center"
+                ></i>
+                <p class="text-lg font-medium group-hover:text-s1 duration-500" style="color: #01195C;">
+                  Secure Investments
+                </p>
+              </div>
+              <div
+                class="group col-span-2 sm:col-span-1 flex justify-start items-center gap-5"
+              >
+                <i
+                  class="ph-fill ph-rocket-launch rounded-full border border-strokeColor bg-softBg w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] text-4xl text-s1 group-hover:text-mainTextColor group-hover:bg-s2 group-hover:border-mainTextColor duration-500 !leading-[0] flex justify-center items-center"
+                ></i>
+                <p class="text-lg font-medium group-hover:text-s1 duration-500" style="color: #01195C;">
+                  Multi-Sector Services
+                </p>
+              </div>
+            </div>
+            <div class="flex justify-start items-start">
+              <a
+                href="./contact.html"
+                class="flex justify-center max-sm:text-sm items-center gap-3 py-2 md:py-3 px-3 md:px-6 rounded-full bg-s2 border border-mainTextColor text-mainTextColor group font-medium"
+              >
+                Contact Us
+                <span
+                  class="group-hover:rotate-[45deg] duration-500 text-base sm:text-xl lg:text-2xl !leading-[0]"
+                >
+                  <i class="ph-bold ph-arrow-up-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Solutions Section End -->
+
+    <!-- Features Section Start -->
+    <section class="bg-softBg1 stp-30 sbp-30">
+      <div class="container">
+        <div
+          class="flex justify-between items-end gap-6 max-lg:flex-col max-lg:items-start"
+        >
+          <div class="max-w-[600px] flex justify-center items-start flex-col">
+<p 
+  class="bg-p1 py-3 px-5 rounded-full wow animate__animated animate__fadeInUp fw-bold"
+  style="color: #01195C; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+>
+  Services
+</p>
+            <h1
+              class="display-4 pt-4 wow animate__animated animate__fadeInDown" style="color: #01195C;">
+              Smart Financial Solutions for Every Need
+            </h1>
+          </div>
+          <p class="text-bodyText max-w-[500px]" style="color: #01195C;">
+            We simplify savings, borrowing, and investing through trusted chit fund schemes and multi-sector services. Everything you need—under one roof.
+          </p>
+        </div>
+<!-- Main Services Section -->
+<div class="grid grid-cols-12 gap-8 stp-15 items-center">
+    <!-- Card Section (Left Side) -->
+    <div class="col-span-12 lg:col-span-6 wow animate__animated animate__fadeInUp" data-wow-duration="1.3s">
+        <div class="bg-white p-6 xl:p-8 flex flex-col border-2 border-[#FFBD59] group hover:border-[#01195C] duration-700 hover:shadow-lg"
+            style="background: linear-gradient(135deg, #FFE680, #FFBD59);">
+            <div class="text-4xl pb-6 duration-500" style="color: #01195C;">
+                <i class="ph-fill ph-users-three"></i>
+            </div>
+            <h4 class="heading-4 pb-5" style="color: #01195C;">Chit Fund Plans</h4>
+            <p class="pb-6" style="color: #01195C;">
+                Join flexible chit schemes that ensure hassle-free savings and timely payouts with trust, transparency, long-term consistency, and reliability.
+            </p>
+            <a href="./contact.html" class="flex justify-start items-center gap-2 font-medium" style="color: #01195C;">
+                Learn more <i class="ph ph-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Image Section (Right Side) -->
+    <div class="col-span-12 lg:col-span-6 wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
+        <div class="relative w-full h-full min-h-[300px] lg:min-h-[400px] overflow-hidden rounded-lg shadow-md">
+            <img src="assets/images/yesem.PNG" 
+                 alt="Happy customers participating in chit fund"
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/FFBD59/01195C?text=Chit+Fund+Members'; this.alt='Image placeholder'">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#FFBD59]/10"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Other Services Section -->
+<section class="bg-softBg1 stp-28 sbp-28 overflow-hidden"></section>
+<div class="container mt-10">
+    <div class="max-w-[700px] text-center mx-auto mb-10">
+        <h2 class="display-4 wow animate__animated animate__fadeInDown" style="color: #01195C;">
+            Other Services At YESEM Group
+        </h2>
+    </div>
+    
+    <div class="grid grid-cols-12 gap-6 stp-15">
+        <!-- Loan Services Card -->
+        <div class="col-span-12 sm:col-span-6 lg:col-span-3 wow animate__animated animate__fadeInUp h-full"
+            data-wow-duration="1.3s"
+            data-wow-delay=".2s">
+            <div class="bg-white p-6 xl:p-8 flex flex-col border-2 border-[#FFBD59] group hover:border-[#01195C] duration-700 hover:shadow-lg h-full"
+                style="background: linear-gradient(135deg, #FFBD59, #FF914D);">
+                <div class="text-4xl pb-6 duration-500" style="color: #01195C;">
+                    <i class="ph-fill ph-hand-coins"></i>
+                </div>
+                <h4 class="heading-4 pb-5" style="color: #01195C;">Loan Services</h4>
+                <p class="pb-6 flex-grow" style="color: #01195C;">
+                    Get quick approvals with minimal documentation and easy repayment options, customized to your financial needs and goals.
+                </p>
+                <a href="./contact.html"
+                    class="flex justify-start items-center gap-2 font-medium mt-auto"
+                    style="color: #01195C;">
+                    Learn more <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Real Estate & Construction Card -->
+        <div class="col-span-12 sm:col-span-6 lg:col-span-3 wow animate__animated animate__fadeInUp h-full"
+            data-wow-duration="1.3s"
+            data-wow-delay=".4s">
+            <div class="bg-white p-6 xl:p-8 flex flex-col border-2 border-[#FFBD59] group hover:border-[#01195C] duration-700 hover:shadow-lg h-full"
+                style="background: linear-gradient(135deg, #FF914D, #FFBD59);">
+                <div class="text-4xl pb-6 duration-500" style="color: #01195C;">
+                    <i class="ph-fill ph-user-gear"></i>
+                </div>
+                <h4 class="heading-4 pb-5" style="color: #01195C;">Real Estate & Construction</h4>
+                <p class="pb-6 flex-grow" style="color: #01195C;">
+                    Buy or build properties confidently through our expert support, fair pricing, and legal guidance in every transaction.
+                </p>
+                <a href="./contact.html"
+                    class="flex justify-start items-center gap-2 font-medium mt-auto"
+                    style="color: #01195C;">
+                    Learn more <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Transport Services Card -->
+        <div class="col-span-12 sm:col-span-6 lg:col-span-3 wow animate__animated animate__fadeInUp h-full"
+            data-wow-duration="1.3s"
+            data-wow-delay=".6s">
+            <div class="bg-white p-6 xl:p-8 flex flex-col border-2 border-[#FFBD59] group hover:border-[#01195C] duration-700 hover:shadow-lg h-full"
+                style="background: linear-gradient(135deg, #FFDE59, #FFBD59);">
+                <div class="text-4xl pb-6 duration-500" style="color: #01195C;">
+                    <i class="ph-fill ph-user-plus"></i>
+                </div>
+                <h4 class="heading-4 pb-5" style="color: #01195C;">Transport Services</h4>
+                <p class="pb-6 flex-grow" style="color: #01195C;">
+                    Reliable vehicle financing and support for personal or commercial needs—delivered with speed, trust, and convenience.
+                </p>
+                <a href="./contact.html"
+                    class="flex justify-start items-center gap-2 font-medium mt-auto"
+                    style="color: #01195C;">
+                    Learn more <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Multi-Sector Services Card -->
+        <div class="col-span-12 sm:col-span-6 lg:col-span-3 wow animate__animated animate__fadeInUp h-full"
+            data-wow-duration="1.3s"
+            data-wow-delay=".8s">
+            <div class="bg-white p-6 xl:p-8 flex flex-col border-2 border-[#FFBD59] group hover:border-[#01195C] duration-700 hover:shadow-lg h-full"
+                style="background: linear-gradient(135deg, #FFDE59, #FFBD59);">
+                <div class="text-4xl pb-6 duration-500" style="color: #01195C;">
+                    <i class="ph-fill ph-user-plus"></i>
+                </div>
+                <h4 class="heading-4 pb-5" style="color: #01195C;">Multi-Sector Services</h4>
+                <p class="pb-6 flex-grow" style="color: #01195C;">
+                    From retail to transport, finance to real estate—we deliver excellence across every sector under one brand.
+                </p>
+                <a href="./contact.html"
+                    class="flex justify-start items-center gap-2 font-medium mt-auto"
+                    style="color: #01195C;">
+                    Learn more <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+    <section class="bg-softBg1 stp-28 sbp-28 overflow-hidden">
+  <div class="container">
+    <div
+      class="flex justify-between items-end gap-6 max-lg:flex-col max-lg:items-start"
+    >
+      <div class="max-w-[600px] flex justify-center items-start flex-col">
+        <p 
+  class="bg-p1 py-3 px-5 rounded-full fw-bold text-uppercase"
+  style="color: #01195C; font-size: 1.1rem; letter-spacing: 1px;"
+>
+  WHY YESEM CHITS PRIVATE LTD
+</p>
+        <h1 class="display-4 pt-4" style="color: #01195C;">A trusted platform for your financial growth</h1>
+      </div>
+      <p class="text-bodyText max-w-[500px]" style="color: #01195C;">
+        Your dependable partner in savings, loans, and secure investment. We help individuals and businesses grow through flexible chit plans and reliable multi-sector services.
+      </p>
+    </div>
+<!-- First Card Section (Standalone) -->
+<!-- Main Services Section -->
+<div class="grid grid-cols-12 gap-6 stp-15 items-center">
+    <!-- Card Section (Left Side) - Mobile first then desktop -->
+    <div class="col-span-12 lg:col-span-6 wow animate__animated animate__fadeInUp" data-wow-duration="1.3s">
+        <div class="bg-white p-6 xl:p-8 flex flex-col border-2 border-[#FFBD59] group hover:border-[#01195C] duration-700 hover:shadow-lg"
+            style="background: linear-gradient(135deg, #FFE680, #FFBD59);">
+            <div class="text-4xl pb-6 duration-500" style="color: #01195C;">
+                <i class="ph-fill ph-users-three"></i>
+            </div>
+            <h4 class="heading-4 pb-5" style="color: #01195C;">Flexible Plans for Every Lifestyle</h4>
+            <p class="pb-6" style="color: #01195C;">
+                Choose daily or monthly schemes that fit your budget and goals.
+A trusted platform for your financial growth.
+            </p>
+            <a href="./contact.html" class="flex justify-start items-center gap-2 font-medium" style="color: #01195C;">
+                Learn more <i class="ph ph-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Image Section (Right Side) - Mobile first then desktop -->
+    <div class="col-span-12 lg:col-span-6 wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
+        <div class="relative w-full h-full min-h-[300px] sm:min-h-[400px] overflow-hidden rounded-lg shadow-lg">
+            <img src="assets/images/moneyy_cleanup.PNG" 
+                 alt="Happy customers participating in chit fund"
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src='https://placehold.co/800x600/FFBD59/01195C?text=Chit+Fund+Members'; this.alt='Image placeholder'">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#FFBD59]/20"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Other Supports Section -->
+<div class="container mt-12">
+    <!-- Section Title -->
+    <div class="max-w-[700px] text-center mx-auto mb-10">
+        <h2 class="display-4 wow animate__animated animate__fadeInDown" style="color: #01195C;">
+            Other Supports At YESEM Group
+        </h2>
+    </div>
+    
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-12 gap-6 stp-15">
+        <!-- Card 1 -->
+        <div
+            class="col-span-12 sm:col-span-6 lg:col-span-4 wow animate__animated animate__fadeInUp"
+            data-wow-duration="1.3s"
+            data-wow-delay=".2s"
+        >
+            <div
+                class="h-full p-6 xl:p-8 flex flex-col border-2 border-[#FFBD59] group hover:border-[#01195C] duration-700 hover:shadow-lg"
+                style="background: linear-gradient(135deg, #FFBD59, #FF914D);"
+            >
+                <div class="aspect-w-16 aspect-h-9 mb-4 w-full overflow-hidden rounded-lg">
+                    <img src="./assets/images/fastmoney.webp" alt="Fast disbursal" class="w-full h-full object-cover" />
+                </div>
+                <h4 class="pt-4 heading-4 text-center" style="color: #01195C;">
+                    Fast disbursal with minimal paperwork and trusted support.
+                </h4>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+            class="col-span-12 sm:col-span-6 lg:col-span-4 wow animate__animated animate__fadeInUp"
+            data-wow-duration="1.3s"
+            data-wow-delay=".4s"
+        >
+            <div
+                class="h-full p-6 xl:p-8 flex flex-col border-2 border-[#FFBD59] group hover:border-[#01195C] duration-700 hover:shadow-lg"
+                style="background: linear-gradient(135deg, #FF914D, #FFBD59);"
+            >
+                <div class="aspect-w-16 aspect-h-9 mb-4 w-full overflow-hidden rounded-lg">
+                    <img src="./assets/images/cashwithman.jpg" alt="Expert guidance" class="w-full h-full object-cover" />
+                </div>
+                <h4 class="pt-4 heading-4 text-center" style="color: #01195C;">
+                    Buy, sell, or build with expert guidance and clear processes.
+                </h4>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+            class="col-span-12 sm:col-span-6 lg:col-span-4 wow animate__animated animate__fadeInUp"
+            data-wow-duration="1.3s"
+            data-wow-delay=".6s"
+        >
+            <div
+                class="h-full p-6 xl:p-8 flex flex-col border-2 border-[#FFBD59] group hover:border-[#01195C] duration-700 hover:shadow-lg"
+                style="background: linear-gradient(135deg, #FFDE59, #FFBD59);"
+            >
+                <div class="aspect-w-16 aspect-h-9 mb-4 w-full overflow-hidden rounded-lg">
+                    <img src="./assets/images/emi.avif" alt="EMI plans" class="w-full h-full object-cover" />
+                </div>
+                <h4 class="pt-4 heading-4 text-center" style="color: #01195C;">
+                    Custom EMI plans designed for your convenience.
+                </h4>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+            class="col-span-12 sm:col-span-6 lg:col-span-4 wow animate__animated animate__fadeInUp"
+            data-wow-duration="1.3s"
+            data-wow-delay=".8s"
+        >
+            <div
+                class="h-full p-6 xl:p-8 flex flex-col border-2 border-[#FFBD59] group hover:border-[#01195C] duration-700 hover:shadow-lg"
+                style="background: linear-gradient(135deg, #FFE680, #FF914D);"
+            >
+                <div class="aspect-w-16 aspect-h-9 mb-4 w-full overflow-hidden rounded-lg">
+                    <img src="./assets/images/cashretail.jpg" alt="Multi-sector services" class="w-full h-full object-cover" />
+                </div>
+                <h4 class="pt-4 heading-4 text-center" style="color: #01195C;">
+                    Finance, transport, retail, and more—under one roof.
+                </h4>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div
+            class="col-span-12 sm:col-span-6 lg:col-span-4 wow animate__animated animate__fadeInUp"
+            data-wow-duration="1.3s"
+            data-wow-delay="1s"
+        >
+            <div
+                class="h-full p-6 xl:p-8 flex flex-col border-2 border-[#FFBD59] group hover:border-[#01195C] duration-700 hover:shadow-lg"
+                style="background: linear-gradient(135deg, #FFBD59, #FFDE59);"
+            >
+                <div class="aspect-w-16 aspect-h-9 mb-4 w-full overflow-hidden rounded-lg">
+                    <img src="./assets/images/document.webp" alt="Clear records" class="w-full h-full object-cover" />
+                </div>
+                <h4 class="pt-4 heading-4 text-center" style="color: #01195C;">
+                    Clear, honest records to help you track, manage, and grow.
+                </h4>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div
+            class="col-span-12 sm:col-span-6 lg:col-span-4 wow animate__animated animate__fadeInUp"
+            data-wow-duration="1.3s"
+            data-wow-delay="1s"
+        >
+            <div
+                class="h-full p-6 xl:p-8 flex flex-col border-2 border-[#FFBD59] group hover:border-[#01195C] duration-700 hover:shadow-lg"
+                style="background: linear-gradient(135deg, #FFBD59, #FFDE59);"
+            >
+                <div class="aspect-w-16 aspect-h-9 mb-4 w-full overflow-hidden rounded-lg">
+                    <img src="./assets/images/Financialgoals.webp" alt="Smart bidding" class="w-full h-full object-cover" />
+                </div>
+                <h4 class="pt-4 heading-4 text-center" style="color: #01195C;">
+                    Smart, transparent bidding for your financial goals.
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+</div>
+</div>
+</section>
+    <!-- Experience Accupay Section Start -->
+    <div class="overflow-hidden" style="background: linear-gradient(90deg, #01195C, #00308F);">
+      <div class="max-xxl:container xxl:ml-[calc((100%-1296px)/2)] flex justify-between text-white sm:max-xxl:gap-6 max-lg:flex-col py-16">
+    <div class="flex flex-col justify-center items-start w-full lg:max-xxl:w-1/2 xxl:max-w-[550px] max-xxl:pb-8 max-xxl:overflow-hidden">
+      <p class="text-lg font-medium underline wow animate__animated animate__fadeInUp" style="color: var(--secondary);">
+        Experience YESEM
+      </p>
+
+      <h1 class="display-4 pb-6 pt-4 wow animate__animated animate__fadeInDown">
+        We've got everything you need
+      </h1>
+
+      <p class="pb-8 wow animate__animated animate__fadeInUp">
+        We simplify your financial journey—from secure chit schemes to quick loans and property investments, all under one roof.
+      </p>
+
+  <a href="./contact.html" 
+   class="flex justify-center items-center gap-3 py-3 px-6 rounded-full font-medium transition-all duration-300"
+   style="background: linear-gradient(90deg, #FFDE59, #FF914D); color: #01195C; border: 2px solid #01195C;">
+   Contact Us
+   <span class="group-hover:rotate-45 transition-transform duration-300">
+      <i class="ph-bold ph-arrow-up-right text-xl"></i>
+   </span>
+</a>
+    </div>
+    <div class="w-full lg:max-xxl:w-1/2 self-stretch flex justify-center max-xxl:items-center lg:pt-10 wow animate__animated animate__fadeInUp">
+      <img src="./assets/images/money_distribution.PNG" alt="image" class="object-cover max-h-[400px]">
+    </div>
+  </div>
+</div>
+
+<!-- Gallery -->
+<section class="container py-5">
+  <h2 class="text-center mb-5 fw-bold display-4" style="color: #01195C;">
+    Gallery
+  </h2>
+
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4">
+      <img
+        src="./assets/images/ig1.jpeg"
+        class="img-fluid shadow rounded gallery-img"
+        alt="Boat on Calm Water"
+      />
+      <img
+        src="./assets/images/ig6.jpeg"
+        class="img-fluid shadow rounded gallery-img mt-4"
+        alt="Wintry Mountain Landscape"
+      />
+    </div>
+
+    <div class="col-lg-4 col-md-6 mb-4">
+      <img
+        src="./assets/images/slide2.jpeg"
+        class="img-fluid shadow rounded gallery-img"
+        alt="Mountains in the Clouds"
+      />
+      <img
+        src="./assets/images/i.jpeg"
+        class="img-fluid shadow rounded gallery-img mt-4"
+        alt="Boat on Calm Water"
+      />
+    </div>
+
+    <div class="col-lg-4 col-md-12 mb-4">
+      <img
+        src="./assets/images/ig9.jpeg"
+        class="img-fluid shadow rounded gallery-img"
+        alt="Waves at Sea"
+      />
+      <img
+        src="./assets/images/ig4.jpeg"
+        class="img-fluid shadow rounded gallery-img mt-4"
+        alt="Yosemite National Park"
+      />
+    </div>
+  </div>
+
+  <!-- View More Button -->
+<div class="text-center mt-5">
+  <a href="./gallery.html" 
+     class="inline-block px-5 py-3 fw-bold rounded-full transition-all duration-300 hover:shadow-lg"
+     style="background: linear-gradient(90deg, #FFE680, #FFBD59); color: #01195C; border: none;">
+    View More
+  </a>
+</div>
+</section>
+
+<!-- Gallery -->
+<!-- Footer Section Start -->
+<footer class="bg-mainTextColor text-white/60">
+  <div class="container grid grid-cols-12 stp-30 sbp-30 gap-6 max-xxl:pr-4">
+    <div class="col-span-12 min-[450px]:col-span-6 lg:col-span-3 flex flex-col gap-6 lg:gap-8">
+      <a href="./index.html">
+        <img src="./assets/images/logo_white.png" alt="image" />
+      </a>
+      <p class="">
+        Your trusted partner in chit funds and financial solutions. We deliver security, flexibility, and guaranteed returns.
+      </p>
+    </div>
+
+    <div class="xl:pl-30 col-span-12 min-[400px]:col-span-6 lg:col-span-3">
+      <h4 class="mb-6 pb-2 relative text-white after:absolute after:w-[20%] after:h-[2px] after:bottom-0 after:left-0 after:bg-p1 hover:after:w-[40%] after:duration-500">
+        Resources
+      </h4>
+      <ul class="flex flex-col gap-4 md:gap-5">
+        <li>
+          <a href="./index.html" class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="./schemes.html" class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            Schemes
+          </a>
+        </li>
+        <li>
+          <a href="./gallery.html" class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            Gallery
+          </a>
+        </li>
+        <li>
+          <a href="./contact.html" class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            Contact Us
+          </a>
+        </li>
+        <li>
+          <a href="./about.html" class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            About Page
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="xl:pl-30 col-span-12 min-[400px]:col-span-6 lg:col-span-3">
+      <h4 class="mb-6 pb-2 relative text-white after:absolute after:w-[20%] after:h-[2px] after:bottom-0 after:left-0 after:bg-p1 hover:after:w-[40%] after:duration-500">
+        Services
+      </h4>
+      <ul class="flex flex-col gap-4 md:gap-5">
+        <li>
+          <a class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            Chit Fund Plans
+          </a>
+        </li>
+        <li>
+          <a class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            Finance
+          </a>
+        </li>
+        <li>
+          <a class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            Real Estate
+          </a>
+        </li>
+        <li>
+          <a class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            Construction
+          </a>
+        </li>
+        <li>
+          <a class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            Transport
+          </a>
+        </li>
+        <li>
+          <a class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            Departmental Stores
+          </a>
+        </li>
+        <li>
+          <a class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            Restaurants
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-span-12 min-[450px]:col-span-6 lg:col-span-3 xl:pl-30">
+      <h4 class="mb-4 md:mb-6 pb-2 relative text-white after:absolute after:w-[20%] after:h-[2px] after:bottom-0 after:left-0 after:bg-p1 hover:after:w-[40%] after:duration-500">
+        Get In Touch
+      </h4>
+      <ul class="flex flex-col gap-4 md:gap-3">
+        <li>
+          <a href="mailto:yesemchits@gmail.com" class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500" target="_blank">
+            <span class="text-2xl pt-2">
+              <i class="ph ph-envelope-simple-open"></i>
+            </span>
+            yesemchits@gmail.com
+          </a>
+        </li>
+        <div class="flex flex-col gap-2">
+          <div class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            <span class="text-2xl pt-2"><i class="ph ph-phone-call"></i></span>
+            <a href="tel:+91 9840278805">9840278805</a>
+          </div>
+          <div class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            <span class="text-2xl pt-2 invisible"><i class="ph ph-phone-call"></i></span>
+            <a href="tel:+91 9150500254">9150500254</a>
+          </div>
+          <div class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            <span class="text-2xl pt-2 invisible"><i class="ph ph-phone-call"></i></span>
+            <a href="tel:+91 9944788056">9944788056</a>
+          </div>
+          <div class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            <span class="text-2xl pt-2 invisible"><i class="ph ph-phone-call"></i></span>
+            <a href="tel:04445938805">04445938805</a>
+          </div>
+          <div class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            <span class="text-2xl pt-2 invisible"><i class="ph ph-phone-call"></i></span>
+            <a href="tel:04446148805">04446148805</a>
+          </div>
+        </div>
+        <li>
+          <a href="https://www.google.com/maps?q=No.+159,+First+Floor,+Madhavaram+High+Road,+Perambur,+Chennai+600011" target="_blank" rel="noopener noreferrer" class="flex justify-start items-center gap-2 hover:text-white hover:translate-x-2 duration-500">
+            <span class="text-2xl pt-2">
+              <i class="ph ph-paper-plane-tilt"></i>
+            </span>
+            <span>
+              No. 159, First Floor, Madhavaram High Road, Perambur, Chennai – 600011<br />
+              (Near Canara Bank, Adj. to Apollo Computer Lab)
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="container py-6 flex justify-between items-center max-md:flex-col gap-6">
+      <p class="text-center">
+        YESEM CHITS PRIVATE LIMITED © Copyright 2025. All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+    <!-- Footer Section End -->
+
+    <!-- Scroll To top Button Start -->
+    <button
+  class="fixed text-white text-xl sm:text-2xl rounded-full bg-p1 hover:bg-s2 border border-p1 hover:border-white right-6 md:right-10 p-2 sm:p-3 z-40 jumping1 duration-700 scrollButton scrollButtonHide !leading-[0]"
+  aria-label="bottom to top button"
+>
+  <span class="block">
+    <i class="ph ph-arrow-up"></i>
+  </span>
+</button>
+
+    <!-- Scroll To top Button End -->
+
+    <!--==================================================================-->
+
+    <!-- ==== js dependencies start ==== -->
+    <script defer src="index.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/plugins/plugins.js"></script>
+    <script src="./assets/js/plugins/plugin-custom.js"></script>
+  </body>
+</html>
